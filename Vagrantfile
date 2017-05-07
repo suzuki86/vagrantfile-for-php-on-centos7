@@ -17,6 +17,11 @@ Vagrant.configure("2") do |config|
   config.vm.define "YOUR_MACHINE_NAME" do |node|
     node.vm.hostname = "YOUR_HOST_NAME"
     node.vm.network "private_network", type: "dhcp"
+    node.vm.provision "ansible_local" do |ansible|
+      ansible.playbook = "ansible/main.yml"
+      ansible.install = true
+      ansible.verbose = "vvv"
+    end
   end
 
   config.vm.provider "virtualbox"
