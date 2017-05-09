@@ -20,3 +20,6 @@
 
   - name: Install Git
     yum: name=git state=installed
+
+  - name: Install PHP
+    yum: name=php state=installed
