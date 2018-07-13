@@ -9,8 +9,8 @@
   - name: Install httpd
     yum: name=httpd state=installed
 
-  - name: Start httpd
-    service: name=httpd state=started enabled=yes
+  - name: Install nginx
+    yum: name=nginx state=installed
 
   - name: Start firewalld
     service: name=firewalld state=started enabled=yes
